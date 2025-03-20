@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>欧阳皓楠的个人简历</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         * {
             margin: 0;
@@ -15,16 +14,49 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: url('background.jpg') no-repeat center center/cover;
+            background: url('background.jpg') no-repeat center center/cover; /* 全局背景 */
             margin: 0;
             padding: 0;
         }
+
+        /* 页眉部分：库里照片作为背景 */
         header {
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 20px;
+            background: url('curry.jpg') no-repeat center center/cover;  /* 将'curry.jpg'替换成你的库里照片路径 */
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            color: #fff;
+            position: relative;
         }
+
+        /* 半透明遮罩，增强文字可读性 */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6); /* 黑色半透明遮罩 */
+            z-index: 0;
+        }
+
+        header h1, header p {
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 22px;
+        }
+
         nav {
             display: flex;
             justify-content: center;
@@ -39,6 +71,7 @@
         nav a:hover {
             background: #555;
         }
+
         section {
             padding: 40px 20px;
             max-width: 1100px;
@@ -47,80 +80,89 @@
             box-shadow: 0 0 15px #aaa;
             border-radius: 8px;
         }
+
         h2 {
             color: #0056b3;
             font-size: 26px;
         }
+
         ul {
             list-style: none;
         }
+
         ul li {
             padding: 10px 0;
             border-bottom: 1px solid #ccc;
         }
+
         ul li:last-child {
             border-bottom: none;
         }
+
         footer {
             background: rgba(0, 0, 0, 0.7);
             color: #fff;
             text-align: center;
             padding: 10px;
         }
+
         a {
             color: #007BFF;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>欧阳皓楠</h1>
-        <p>土壤学研究生 | 数据分析 | 微生物代谢</p>
-    </header>
-    
-    <nav>
-        <a href="#about">关于我</a>
-        <a href="#experience">学习与科研经历</a>
-        <a href="#skills">技能</a>
-        <a href="#contact">联系我</a>
-    </nav>
-    
-    <section id="about">
-        <h2>关于我</h2>
-        <p>华中农业大学土壤学研究生，本科毕业于东北农业大学农业资源与环境专业，专注于土壤有机质与微生物研究。熟悉数据分析与可视化，参与多项科研项目与竞赛。</p>
-    </section>
-    
-    <section id="experience">
-        <h2>学习与科研经历</h2>
-        <ul>
-            <li><strong>本科：</strong> 东北农业大学，农业资源与环境专业（2020.09 - 2024.06）<br>GPA: 3.4814/5.000，掌握土壤学、植物学、地质与土壤基础等课程。</li>
-            <li><strong>研究生：</strong> 华中农业大学，土壤学研究生<br>已修课程：数据驱动的可重复性研究、分子生物学、自然界中的生物膜、土壤物理、土壤生物化学等。</li>
-            <li><strong>科研论文：</strong> 参与论文《长期施用肥料对盐碱地土壤肥力的影响》，发表于《农机科学学报》2022年第16期。</li>
-            <li><strong>获奖经历：</strong> 参与黑龙江省挑战杯竞赛获省级银奖。</li>
-        </ul>
-    </section>
-    
-    <section id="skills">
-        <h2>技能</h2>
-        <ul>
-            <li>Python 数据分析与可视化</li>
-            <li>SPSS、Excel 等数据分析软件</li>
-            <li>PS、PR、AE等图像与视频编辑</li>
-        </ul>
-    </section>
-    
-    <section id="contact">
-        <h2>联系我</h2>
-        <p>邮箱：18872394558@example.com</p>
-        <p>GitHub：<a href="https://github.com/你的GitHub用户名" target="_blank">QAQ</a></p>
-    </section>
-    
-    <footer>
-        <p>© 2025 欧阳皓楠 | 个人简历网站</p>
-    </footer>
+
+<header>
+    <h1>欧阳皓楠</h1>
+    <p>土壤学研究生 | 数据分析 | 微生物代谢</p>
+</header>
+
+<nav>
+    <a href="#about">关于我</a>
+    <a href="#experience">学习与科研经历</a>
+    <a href="#skills">技能</a>
+    <a href="#contact">联系我</a>
+</nav>
+
+<section id="about">
+    <h2>关于我</h2>
+    <p>华中农业大学土壤学研究生，本科毕业于东北农业大学农业资源与环境专业，专注于土壤有机质与微生物研究。熟悉数据分析与可视化，参与多项科研项目与竞赛。</p>
+</section>
+
+<section id="experience">
+    <h2>学习与科研经历</h2>
+    <ul>
+        <li><strong>本科：</strong> 东北农业大学，农业资源与环境专业（2020.09 - 2024.06）<br>GPA: 3.4814/5.000，掌握土壤学、植物学、地质与土壤基础等课程。</li>
+        <li><strong>研究生：</strong> 华中农业大学，土壤学研究生<br>已修课程：数据驱动的可重复性研究、分子生物学、自然界中的生物膜、土壤物理、土壤生物化学等。</li>
+        <li><strong>科研论文：</strong> 参与论文《长期施用肥料对盐碱地土壤肥力的影响》，发表于《农机科学学报》2022年第16期。</li>
+        <li><strong>获奖经历：</strong> 参与黑龙江省挑战杯竞赛获省级银奖。</li>
+    </ul>
+</section>
+
+<section id="skills">
+    <h2>技能</h2>
+    <ul>
+        <li>Python 数据分析与可视化</li>
+        <li>SPSS、Excel 等数据分析软件</li>
+        <li>PS、PR、AE等图像与视频编辑</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>联系我</h2>
+    <p>邮箱：18872394558@example.com</p>
+    <p>GitHub：<a href="https://github.com/你的GitHub用户名" target="_blank">QAQ</a></p>
+</section>
+
+<footer>
+    <p>© 2025 欧阳皓楠 | 个人简历网站</p>
+</footer>
+
 </body>
 </html>
