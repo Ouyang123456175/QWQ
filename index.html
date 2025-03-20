@@ -31,18 +31,6 @@
             position: relative;
         }
 
-        /* 半透明遮罩，增强文字可读性 */
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6); /* 黑色半透明遮罩 */
-            z-index: 0;
-        }
-
         header h1, header p {
             position: relative;
             z-index: 1;
@@ -117,10 +105,9 @@
 <body>
 
 <header>
-    <header class="header-img">
     <div class="header-content">
-        <div class="name">欧阳皓楠</div>
-        <div class="tagline">土壤学研究生 | 数据分析 | 微生物代谢</div>
+        <h1>欧阳皓楠</h1>
+        <p>土壤学研究生<br>数据分析 | 微生物代谢</p>
     </div>
 </header>
 
