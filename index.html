@@ -108,6 +108,40 @@
         a:hover {
             text-decoration: underline;
         }
+
+        /* 侧边悬浮导航栏 */
+        .side-nav {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none; /* 默认隐藏 */
+        }
+
+        .side-nav a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .side-nav a:hover {
+            background: rgba(0, 0, 0, 0.1);
+            color: #0056b3;
+        }
+
+        /* 显示悬浮导航栏 */
+        .show-side-nav {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -126,6 +160,14 @@
     <a href="#contact">联系我</a>
 </nav>
 
+<!-- 侧边悬浮导航栏 -->
+<div class="side-nav" id="sideNav">
+    <a href="#about">关于我</a>
+    <a href="#experience">学习与科研经历</a>
+    <a href="#skills">技能</a>
+    <a href="#contact">联系我</a>
+</div>
+
 <section id="about">
     <h2>关于我</h2>
     <p>华中农业大学土壤学研究生，本科毕业于东北农业大学农业资源与环境专业，专注于土壤有机质与微生物研究。熟悉数据分析与可视化，参与多项科研项目与竞赛。</p>
@@ -136,7 +178,7 @@
     <ul>
         <li><strong>本科：</strong> 东北农业大学，农业资源与环境专业（2020.09 - 2024.06）<br>GPA: 3.4814/5.000，掌握土壤学、植物学、地质与土壤基础等课程。</li>
         <li><strong>研究生：</strong> 华中农业大学，土壤学研究生<br>已修课程：数据驱动的可重复性研究、分子生物学、自然界中的生物膜、土壤物理、土壤生物化学等。</li>
-        <li><strong>科研论文：</strong> 参与论文《长期施用肥料对盐碱地土壤肥力的影响》，发表于《农村科学学报》2022年第16期。</li>
+        <li><strong>科研论文：</strong> 参与论文《长期施用肥料对盐碱地土壤肥力的影响》，发表于《农机科学学报》2022年第16期。</li>
         <li><strong>获奖经历：</strong> 参与黑龙江省挑战杯竞赛获省级银奖。</li>
     </ul>
 </section>
@@ -159,6 +201,18 @@
 <footer>
     <p>© 2025 欧阳皓楠 | 个人简历网站</p>
 </footer>
+
+<script>
+    // 监听页面滚动事件
+    window.addEventListener('scroll', function () {
+        const sideNav = document.getElementById('sideNav');
+        if (window.scrollY > 100) { // 滚动超过 100px 时显示悬浮导航栏
+            sideNav.classList.add('show-side-nav');
+        } else {
+            sideNav.classList.remove('show-side-nav');
+        }
+    });
+</script>
 
 </body>
 </html>
